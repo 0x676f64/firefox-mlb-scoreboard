@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+html {
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: "Rubik", Arial, sans-serif;
+    margin: 0;
+    /* Remove or modify the transform for Firefox compatibility */
+    /* transform: scale(0.7); */
+    /* transform-origin: top left; */
+    display: flex;
+    flex-direction: column;
+    
+    /* Set explicit dimensions for Firefox */
+    min-width: 500px;
+    min-height:545px;
+    width: 500px;
+    height: auto;
+}
+
+/* Alternative: Browser-specific scaling if you need different sizes */
+/* Chrome-specific (if you need the scaling only in Chrome) */
+body:not(:-moz-any()) {
+    transform: scale(0.7);
+    transform-origin: top left;
+}
+
+/* Or use CSS custom properties for better control */
+:root {
+    --popup-scale: 1; /* Default for Firefox */
+}
+
+/* Chrome-specific scaling */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+    :root {
+        --popup-scale: 0.7;
+    }
+}
+
+/* Apply scaling using custom property */
+body {
+    transform: scale(var(--popup-scale));
+    transform-origin: top left;
+}
+
+#scorebug {
+    text-align: center;
+    background-color: #fff;
+    color: #000;
+}
+
+#scorebug h2 {
+    text-align: center;
+}
+
+.balls-strikes {
+    font-weight: 400;
+}
+
+#games-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px; /* Reduce spacing between game boxes */
+    padding: 5px; /* Reduce padding */
+}
+
+.game-box {
+    border: 2px solid #0B0F13; /* Thinner border */
+    padding: 5px; /* Less padding */
+    text-align: center;
+    background-color: #e5decf;
+    border-radius: 5px; /* Smaller border radius */
+    font-size: 10px; /* Reduce text size */
+    width: 150px; /* Set a smaller width */
+    height: 120px; /* Set a smaller height */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.game-box:active, .game-box:hover, .game-box:focus,
+.game-box:focus-within {
+    transform: scale(1.03);
+    box-shadow: rgba(0, 0, 0, 1) 0px 0px 10px 1px;
+    transition: transform .2s;
+}
+
+
+.team-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.team-logo {
+    width: 35px; /* Smaller logos */
+    height: 35px;
+}
+
+.team-abbr, .team-score {
+    font-size: 16px; /* Reduce font size */
+    margin: 0 5px;
+    font-weight: 500;
+    color: #373838;
+}
+
+.game-status {
+    font-size: 15px;
+    font-weight: 700;
+    align-self: flex-start;
+    color: #ff6a6c;
+}
+
+#scorebug {
+    background-color: transparent;
+    top: 150px;
+}
+
+/* Add this to your CSS file, or update an existing #backButton rule */
+#backButton {
+    font-family: 'Rubik', sans-serif; /* Use Rubik font */
+    background-color: #2a283e; /* Button background color */
+    color: #ff6a6c; /* Font color */
+    padding: 10px 15px; /* Adjust padding as needed */
+    border-radius: 8px; /* Slightly rounded corners */
+    cursor: pointer; /* Indicate it's clickable */
+    font-weight: 500; /* Make the text bold */
+    width: 70%;
+    transition: background-color 0.5s ease, color 0.5s ease; /* Smooth transition for hover effects */
+}
+
+#backButton:hover {
+    background-color: #2a283ee7; /* Slightly lighter background on hover */
+    border-color: #ffd1d2; /* Match border color on hover */
+}
+
+  .player-info {
+    font-size: 14px;
+  }
+  
